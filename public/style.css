@@ -1,0 +1,28 @@
+/* FONTS */
+/* Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+:root {
+    /* CUSTOM PROPERTIES */
+    /* Kleuren van de verschillende allergenen */
+    --walnoot-kleur: #cd9540;
+    --amandel-kleur: #f1c17e;
+    --cashewnoot-kleur: #e68460;
+    --ei-kleur: #f4eb34;
+    --vis-kleur: #daeeee;
+    --hazelnoot-kleur: #baddce;
+    --pinda-kleur: #72afa6;
+    --schelp-kleur: #f1c8ba;
+    --soja-kleur: #eae3d2;
+
+    /* Primaire kleuren */
+    --donkerblauw: #152a45;
+    --wit: #ffffff;
+    --zwart: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

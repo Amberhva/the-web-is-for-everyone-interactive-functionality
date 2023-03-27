@@ -1,0 +1,27 @@
+<%- include('./partials/head') %>
+<main class="main-content">
+    <% categories.forEach(category => { %>
+    <section class="container">
+        <article class="row">
+            <div class="image">
+                <div class="details">
+                    <h2><span><%= category.titel %></span></h2>
+                    <img class="logo-allergy" src="/<%=category.titel%>.png" />
+                    <div class="category">
+                        <a href="/<%= category.titel %>" class="product-info">Bekijk <span>product</span></a>
+                        <div class="icon-links">
+                            <a href="#"><i class="fa-sharp fa-solid fa-share-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <% }); %>
+
+    <!-- Note starts here -->
+    <% notities.forEach(notitie => { %>
+    <h2><%= notitie.titel %></h2>
+    <% }); %>
+</main>
+<%- include('./partials/foot') %>
