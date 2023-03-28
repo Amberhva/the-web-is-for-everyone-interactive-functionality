@@ -8,7 +8,7 @@
                     <h2><span><%= category.titel %></span></h2>
                     <img class="logo-allergy" src="/<%=category.titel%>.png" />
                     <div class="category">
-                        <a href="/<%= category.titel %>" class="product-info">Bekijk <span>product</span></a>
+                        <a href="/producten?categorie=<%= category.titel %>" class="product-info">Bekijk <span>product</span></a>
                         <div class="icon-links">
                             <a href="#"><i class="fa-sharp fa-solid fa-share-from-square"></i></a>
                         </div>
@@ -19,9 +19,36 @@
     </section>
     <% }); %>
 
-    <!-- Note starts here -->
+    <form action="/" method="post">
+        <fieldset>
+            <legend>notities</legend>
+
+            <!-- notitietest -->
+
+            <!-- TITEL -->
+            <label for="titel">titel<span>(verplicht)</span></label>
+            <input name="titel" id="titel" type="text" required />
+
+            <!-- BESCHRIJVING -->
+            <label for="beschrijving">Notitie</label>
+            <textarea id="beschrijving" name="beschrijving" placeholder="Vul hier jouw notitie in"></textarea>
+
+            <label for="herinnering">herinnering<span>(verplicht)</span></label>
+            <input name="herinnering" id="herinnering" type="datetime-local" required />
+
+            <label for="datum">datum<span>(verplicht)</span></label>
+            <input name="datum" id="datum" type="datetime-local" required />
+
+            <button type="submit">Versturen</button>
+        </fieldset>
+    </form>
+
+    <!-- Created notes start -->
     <% notities.forEach(notitie => { %>
     <h2><%= notitie.titel %></h2>
+    <p><%= notitie.beschrijving %></p>
+    <p><%= notitie.datum %></p>
     <% }); %>
+    <!-- Created notes end -->
 </main>
 <%- include('./partials/foot') %>

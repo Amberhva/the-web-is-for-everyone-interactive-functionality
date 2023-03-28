@@ -14,12 +14,19 @@ server.set("view engine", "ejs");
 server.set("views", "./views");
 server.use(express.static("public"));
 
-// Maak een route naar de index.ejs voor categorieën
+// Maak een route naar de index.ejs voor categorieën en voor notities
 server.get("/", (request, response) => {
     let categoriesUrl = url + "/categories";
+    // let productenUrl = url + "/producten";
 
-    fetchJson(categoriesUrl).then((data) => {
-        response.render("index", data);
+    fetchJson(categoriesUrl).then((data1) => {
+        const baseUrl = "https://api.vinimini.fdnd.nl/api/v1/";
+        const pepijnId = "notities?id=clemozv3c3eod0bunahh71sx7";
+        const url = `${baseUrl}${pepijnId}`;
+
+        fetchJson(url).then((data2) => {
+            response.render("index", { categories: data1.categories, notities: data2.notities });
+        });
     });
 });
 
@@ -28,7 +35,7 @@ server.get("/ei", async (request, response) => {
     let productenUrl = url + "/producten";
 
     await fetchJson(productenUrl).then((data) => {
-        response.render("ei", data);
+        response.render("producten", { producten: data.producten });
     });
 });
 
@@ -37,7 +44,7 @@ server.get("/pinda", async (request, response) => {
     let productenUrl = url + "/producten";
 
     await fetchJson(productenUrl).then((data) => {
-        response.render("pinda", data);
+        response.render("pinda", { data });
     });
 });
 
@@ -46,16 +53,42 @@ server.get("/pinda", async (request, response) => {
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
-// Maak een route voor de index
-server.get("/", (request, response) => {
-    const baseUrl = "https://api.vinimini.fdnd.nl/api/v1/";
-    const pepijnId = "notities?id=clemozv3c3eod0bunahh71sx7";
-    const url = `${baseUrl}${pepijnId}`;
+server.post("/", function (req, res, next) {
+    const baseurl = "https://api.vinimini.fdnd.nl/api/v1/";
+    const url = `${baseurl}`;
+    req.body.afgerond = false;
+    req.body.persoonId = "clemozv3c3eod0bunahh71sx7";
+    req.body.datum = req.body.datum + ":00Z";
+    req.body.herinnering = [req.body.herinnering + ":00Z"];
+    console.log(req.body);
+    postJson(url + "/notities", req.body).then((data) => {
+        console.log(JSON.stringify(data));
+        let newNotitie = { ...req.body };
 
-    fetchJson(url).then((data) => {
-        response.render("index", data);
+        if (data.success) {
+            res.redirect("/new");
+            // TODO: squad meegeven, message meegeven
+            // TODO: Toast meegeven aan de homepagina
+        } else {
+            const errormessage = `${data.message}: Mogelijk komt dit door de slug die al bestaat.`;
+            const newdata = { error: errormessage, values: newData };
+
+            res.render("index", newdata);
+        }
     });
 });
+
+// Maak een route voor de index
+// server.get("/", (request, response) => {
+//     const baseUrl = "https://api.vinimini.fdnd.nl/api/v1/";
+//     const pepijnId = "notities?id=clemozv3c3eod0bunahh71sx7";
+//     const url = `${baseUrl}${pepijnId}`;
+
+//     fetchJson(url).then((data) => {
+//         console.log("bla", data);
+//         response.render("index", data);
+//     });
+// });
 
 // Stel het poortnummer in en start express
 server.set("port", process.env.PORT || 8000);
@@ -65,6 +98,16 @@ server.listen(server.get("port"), function () {
 
 async function fetchJson(url) {
     return await fetch(url)
+        .then((response) => response.json())
+        .catch((error) => error);
+}
+
+export async function postJson(url, body) {
+    return await fetch(url, {
+        method: "post",
+        body: JSON.stringify(body),
+        headers: { "Content-Type": "application/json" },
+    })
         .then((response) => response.json())
         .catch((error) => error);
 }
