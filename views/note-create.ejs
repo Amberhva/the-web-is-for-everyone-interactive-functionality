@@ -1,0 +1,27 @@
+<%- include('./partials/head') %>
+
+<main>
+    <form action="/" method="post">
+        <fieldset>
+            <legend>notities</legend>
+
+            <!-- TITEL -->
+            <label for="titel">titel<span>(verplicht)</span></label>
+            <input name="titel" id="titel" type="text" required />
+
+            <!-- BESCHRIJVING -->
+            <label for="beschrijving">Notitie</label>
+            <textarea id="beschrijving" name="beschrijving" placeholder="Vul hier jouw notitie in"></textarea>
+
+            <label for="herinnering">herinnering<span>(verplicht)</span></label>
+            <input name="herinnering" id="herinnering" type="datetime-local" required />
+
+            <label for="datum">datum<span>(verplicht)</span></label>
+            <input name="datum" id="datum" type="datetime-local" required />
+
+            <button type="submit">Versturen</button>
+        </fieldset>
+    </form>
+</main>
+
+<%- include('./partials/foot') %>
