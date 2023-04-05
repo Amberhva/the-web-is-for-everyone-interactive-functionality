@@ -67,8 +67,6 @@ server.post("/", function (req, res, next) {
 
         if (data.success) {
             res.redirect("/new");
-            // TODO: squad meegeven, message meegeven
-            // TODO: Toast meegeven aan de homepagina
         } else {
             const errormessage = `${data.message}: Mogelijk komt dit door de slug die al bestaat.`;
             const newdata = { error: errormessage, values: newData };
@@ -77,18 +75,6 @@ server.post("/", function (req, res, next) {
         }
     });
 });
-
-// Maak een route voor de index
-// server.get("/", (request, response) => {
-//     const baseUrl = "https://api.vinimini.fdnd.nl/api/v1/";
-//     const pepijnId = "notities?id=clemozv3c3eod0bunahh71sx7";
-//     const url = `${baseUrl}${pepijnId}`;
-
-//     fetchJson(url).then((data) => {
-//         console.log("bla", data);
-//         response.render("index", data);
-//     });
-// });
 
 // Stel het poortnummer in en start express
 server.set("port", process.env.PORT || 8000);

@@ -2,32 +2,37 @@
 
 <main>
     <!-- Notes Section -->
-    <section class="section menu" id="menu">
-        <div class="menu-container container">
-            <div class="menu-text">
+    <section class="section menu">
+        <div class="note-container container">
+            <div class="note-text">
                 <h2 class="section-title">Notities van Pepijn</h2>
                 <p class="section-description">Hieronder zie je een overzicht van al je gemaakte notities.</p>
             </div>
 
-            <div class="menu-content">
-                <div class="menu-items">
+            <div class="note-content">
+                <div class="note-items">
+                    <!-- forEach loop so that it checks every note and displays it -->
                     <% notities.forEach(notitie => { %>
-                    <div class="menu-item flex">
-                        <img src="/placeholder.png" alt="" class="menu-img" />
+                    <div class="note-item flex">
+                        <img src="/placeholder.png" alt="Afbeelding van de pinda en ei van Vini Mini" class="note-img" />
 
-                        <div class="menuItem-details">
-                            <h4 class="menuItem-topic"><%= notitie.titel %></h4>
-                            <p class="menuItem-des"><%= notitie.beschrijving %></p>
+                        <div class="note-item-details">
+                            <!-- Title of the note will be displayed here -->
+                            <h4 class="note-item-topic"><%= notitie.titel %></h4>
+                            <!-- Description of the note will be displayed here -->
+                            <p class="note-item-description"><%= notitie.beschrijving %></p>
                         </div>
 
-                        <div class="menuItem-price flex">
-                            <h4 class="menuItem-topic">Datum</h4>
-                            <span class="menuItem-des"><%= notitie.datum %></span>
+                        <div class="note-item-dates">
+                            <h4 class="note-item-topic">Datum</h4>
+                            <!-- Date of the note will be displayed here -->
+                            <span class="note-item-description"><%= notitie.datum %></span>
                         </div>
 
-                        <div class="menuItem-price flex">
-                            <h4 class="menuItem-topic">Datum van herinnering</h4>
-                            <span class="menuItem-des"><%= notitie.herinnering %></span>
+                        <div class="note-item-dates">
+                            <h4 class="note-item-topic">Datum van herinnering</h4>
+                            <!-- Reminder date of the note will be displayed here -->
+                            <span class="note-item-description"><%= notitie.herinnering %></span>
                         </div>
                     </div>
                     <% }); %>
