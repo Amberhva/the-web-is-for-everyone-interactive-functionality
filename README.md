@@ -39,7 +39,7 @@ Elke frontender bij FDND heeft de taak gekregen om met node, een server-side web
 
 
 ## Live link
-
+https://eager-teal-handkerchief.cyclic.app/
 
 ## Checklist
 ✅ Wat er wel is gelukt:
