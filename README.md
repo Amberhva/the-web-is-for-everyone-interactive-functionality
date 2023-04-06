@@ -3,6 +3,8 @@
 Ontwerp en maak voor een opdrachtgever een interactieve toepassing die voor iedereen toegankelijk is.
 
 > #13 Als ouder wil ik in een dagboek aantekeningen kunnen maken zodat ik niet vergeet wat er is gebeurd.
+> 
+Ik heb helaas niet het dagboek kunnen maken omdat ik alleen kreeg te horen dat we iets met notities moesten gaan doen. Daarom heb ik deze sprint de focus gelegd op het maken van notities en leren omgaan met `POST`.
 
 ## Inhoudsopgave
 
