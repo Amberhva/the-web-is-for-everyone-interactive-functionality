@@ -47,6 +47,7 @@ https://eager-teal-handkerchief.cyclic.app/
 - [x] Gebruikers kunnen iets achterlaten op de website (user generated content)
 - [x] De website is online gepubliceerd
 - [x] Ik heb gewerkt volgens de verschillende fases van de development-lifecycle en ik heb mijn proces bijgehouden in de Wiki
+- [x] Je hebt je werk getest in verschillende browsers en devices en de test gedocumenteerd in je wiki
 - [x] Ik heb comments in mijn Node-code waarmee de server-side code is uitgelegd
 - [x] Aangetoond dat ik in de ontwerpfase verschillende methoden en technieken heb ingezet die ervoor zorgen dat ik precies weet wat ik moet bouwen
 - [x] Ik heb in de Readme bij 'Kenmerken' uitgelegd wat Progressive Enhancement is en hoe ik dit hebt toegepast
