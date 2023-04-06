@@ -1,13 +1,44 @@
 <%- include('./partials/head') %>
 
 <main>
-    <!-- Notes Section -->
+    <!-- Notes start -->
     <section class="section menu">
         <div class="note-container container">
             <div class="note-text">
                 <h2 class="section-title">Notities van Pepijn</h2>
-                <p class="section-description">Hieronder zie je een overzicht van al je gemaakte notities.</p>
+                <p class="section-description">Hieronder kan je een nieuwe notitie maken en oude notities bekijken.</p>
             </div>
+
+            <!-- New note form start -->
+            <article class="note-create">
+                <div class="title-form">Maak een nieuwe notitie</div>
+                <div class="content">
+                    <form action="/" method="post">
+                        <div class="note-details">
+                            <div class="input-box">
+                                <span class="details">Titel</span>
+                                <input type="text" name="titel" id="titel" placeholder="Voeg een titel toe" required />
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Notitie</span>
+                                <textarea id="beschrijving" name="beschrijving" placeholder="Vul hier jouw notitie in" required></textarea>
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Datum</span>
+                                <input name="herinnering" id="herinnering" type="datetime-local" required />
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Datum herinnering</span>
+                                <input name="datum" id="datum" type="datetime-local" required />
+                            </div>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Verstuur" />
+                        </div>
+                    </form>
+                </div>
+            </article>
+            <!-- New note form end -->
 
             <div class="note-content">
                 <div class="note-items">
@@ -40,6 +71,7 @@
             </div>
         </div>
     </section>
+    <!-- Notes end -->
 </main>
 
 <%- include('./partials/foot') %>

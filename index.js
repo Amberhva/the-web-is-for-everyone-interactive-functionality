@@ -66,7 +66,7 @@ server.post("/", function (req, res, next) {
         let newNotitie = { ...req.body };
 
         if (data.success) {
-            res.redirect("/new");
+            res.redirect("/index.ejs");
         } else {
             const errormessage = `${data.message}: Mogelijk komt dit door de slug die al bestaat.`;
             const newdata = { error: errormessage, values: newData };
