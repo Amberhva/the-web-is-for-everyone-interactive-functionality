@@ -1,8 +1,10 @@
 
-# Server-side-rendering Vini Mini
-Ontwerp en ontwikkel een server-side website voor een opdrachtgever
+# The-web-is-for-everyone-interactive-functionality Vini Mini
+Ontwerp en maak voor een opdrachtgever een interactieve toepassing die voor iedereen toegankelijk is.
 
-> #23 Als ouder wil ik een overzicht zien van alle voedingssupplement producten, zodat ik kan achterhalen of er een geschikt product voor mijn Vini Mini bij zit
+> #13 Als ouder wil ik in een dagboek aantekeningen kunnen maken zodat ik niet vergeet wat er is gebeurd.
+> 
+Ik heb helaas niet het dagboek kunnen maken omdat ik alleen kreeg te horen dat we iets met notities moesten gaan doen. Daarom heb ik deze sprint de focus gelegd op het maken van notities en leren omgaan met `POST`.
 
 ## Inhoudsopgave
 
@@ -15,7 +17,7 @@ Ontwerp en ontwikkel een server-side website voor een opdrachtgever
 
 
 ## Beschrijving
-Elke frontender bij FDND heeft de taak gekregen om met node, een server-side website te maken voor de gekozen opdrachtgever. Elke opdrachtgever heeft zijn/haar eigen api waar je alle benodigde data uit moet halen, en laat zien op de website.
+Elke frontender bij FDND heeft de taak gekregen om met node, een server-side website te maken voor de gekozen opdrachtgever. Elke opdrachtgever heeft zijn/haar eigen api waar je alle benodigde data uit moet halen, en laat zien op de website. In deze sprint stond toegankelijkheid centraal. Wat doe je als er mensen zijn met een hele oude apparaat, kunnen ze dan nog wel door de website heen navigeren? Daarnaast stond POSTEN ook centraal deze sprint. Een manier om gebruikers iets te laten plaatsen op de website.
 
 ## Installatie
 1. Download de code via de zip
@@ -30,25 +32,32 @@ Elke frontender bij FDND heeft de taak gekregen om met node, een server-side web
  ## Poster visual
 
  ### 🖥️ Desktop
-![image](https://user-images.githubusercontent.com/112861033/225826034-088b2d71-238d-4492-ad9d-2cd7ae11cbe4.png)
+![desktop](https://user-images.githubusercontent.com/112861033/230243247-273aeeef-edf6-488a-a35d-28c66bc38027.jpg)
+
+### :iphone: Mobiel
+![mobiel](https://user-images.githubusercontent.com/112861033/230243375-e314111f-0ad0-41e7-945d-478c990b25c8.jpg)
+
 
 ## Live link
-https://cyan-tasty-blackbuck.cyclic.app
+https://eager-teal-handkerchief.cyclic.app/
 
 ## Checklist
 ✅ Wat er wel is gelukt:
-- [x] Een website ontworpen en gemaakt met Node, Express en EJS en een REST API
+- [x] Een interactieve functionaliteit ontworpen en gemaakt met Node, Express en EJS en een REST API en client-side JS, CSS en HTML
+- [x] Gebruikers kunnen iets achterlaten op de website (user generated content)
 - [x] De website is online gepubliceerd
-- [x] Mijn proces is bijgehouden in de Wiki
-- [x] Aangetoond dat ik in de analysefase verschillende methoden en technieken heb ingezet om te inventariseren wat er moet gebeuren
+- [x] Ik heb gewerkt volgens de verschillende fases van de development-lifecycle en ik heb mijn proces bijgehouden in de Wiki
+- [x] Je hebt je werk getest in verschillende browsers en devices en de test gedocumenteerd in je wiki
+- [x] Ik heb comments in mijn Node-code waarmee de server-side code is uitgelegd
 - [x] Aangetoond dat ik in de ontwerpfase verschillende methoden en technieken heb ingezet die ervoor zorgen dat ik precies weet wat ik moet bouwen
-- [x]  Aangetoond dat ik in de bouwfase verschillende server-side en client-side methoden en technieken heb ingezet om het ontwerp te realiseren
+- [x] Ik heb in de Readme bij 'Kenmerken' uitgelegd wat Progressive Enhancement is en hoe ik dit hebt toegepast
 
 ❌ Wat er niet is gelukt:
 - [ ] Mijn originele schets na bouwen
-- [ ] Alle afbeeldingen gebruiken van Vini Mini
-- [ ] Een pagina maken met "dit product is nog niet beschikbaar"
-- [ ] Een component maken waar je de tips kan zien
+- [ ] Een dagboek maken
+- [ ] Een pagina maken met "notitie gelukt"
+- [ ] Een pagina maken met "notitie niet gelukt"
+
 
 ## Kenmerken
 * HTML
@@ -57,6 +66,7 @@ https://cyan-tasty-blackbuck.cyclic.app
 * NODE 
 * EJS
 * EXPRESS
+* Progressive enhancement - zorgt ervoor dat de essentiële inhoud en functionaliteit aan zoveel mogelijk gebruikers wordt getoond terwijl de beste ervaring alleen wordt geleverd aan gebruikers van de meest up-to-date browsers die alle code (zoals JavaScript) kan uitvoeren. Dit heb ik gedaan door het essentiële gedeelte van de website (het posten) gebruikelijk te kunnen maken voor mensen met oudere apparaten/browsers.
 * JSON
 * API
 * REST
